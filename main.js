@@ -12,3 +12,15 @@ var vm1 = new Vue({
     }
   }
 })
+
+var vm2 = new Vue({
+  el: '#app2',
+  data: {
+    name: 'kaoru'
+  },
+  // 長いものは使わない方が良さげ
+  template: '<h1>hello {{ name }}</h1>'
+})
+
+// $mount (elプロパティの代わり)
+// vm.$mount('#app1')
