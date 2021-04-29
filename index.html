@@ -6,54 +6,14 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div id="app">
-    <ul>
-      <!-- fがブロック変数, 第２がインデックス -->
-      <li v-for="(f, index ) in fruits">{{ index }}:{{ f }}</li>
-    </ul>
+  <div id="app1">
+    <p>{{ message }}</p>
+    <p>{{ name }}</p>
+  </div>
 
-    <ul>
-      <!-- 1:value 2:key 3:index -->
-      <li v-for="(v, key, index) in object">{{index}}:{{ key }}:{{ v }}</li>
-    </ul>
-
-    <ul>
-      <!-- templateを使うと複数タグあるときにいい感じ -->
-      <template v-for='fruit in fruits'>
-        <hr>
-        <li>{{ fruit }}</li>
-        <hr>
-      </template>
-    </ul>
-
-    <ul>
-      <!-- 整数値もいける -->
-      <li v-for='n in 10'>{{ n }}</li>
-    </ul>
-
-    <ul>
-      <!-- of jsのイテレータぽくかける -->
-      <li v-for='n of 10'>{{ n }}</li>
-    </ul>
-
-    <!-- key属性をつけると良き、（v-forは要素の移動を最小限に抑えて、可能な限り同じタイプのものを再利用しようとする） -->
-    <ul>
-      <!-- NGパターン -->
-      <div v-for="(f, index ) in fruits">
-        <p>{{ index }}:{{ f }}</p>
-        <input type="text">
-      </div>
-
-      <!-- OKパターン keyを使って対応づけ -->
-      <!-- keyつけるときはtemplateタグ使えない -->
-      <!-- keyをindexにしてしまうとだめ（削除した後に0がかぶるため）-->
-      <div v-for="(f, index ) in fruits" :key="f">
-        <p>{{ index }}:{{ f }}</p>
-        <input type="text">
-      </div>
-    </ul>
-    <!-- 上記の状態で先頭を削除すると、最初に入力したフォームの値が次のフォームに引き継がれてしまう -->
-    <button @click='removeForm'>先頭のフォームを削除</button>
+  <div id="app2">
+    <p>{{ message }}</p>
+    <button @click="changeInstance">change instance a</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
