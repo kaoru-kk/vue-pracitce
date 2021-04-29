@@ -9,16 +9,23 @@
   <div id="app1">
     <p>{{ message }}</p>
     <p>{{ myData }}</p>
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
   </div>
 
-  <div id="app2">
-    
-  </div>
+  <div id="app2"></div>
 
-  <div id="app3">
-    
-  </div>
+  <div id="app3"></div>
 
+  <div id="app4">
+    <h1>hello!</h1>
+    <p>{{ name }}</p>
+    <button @click="name = 'tarou'">change name</button>
+    <button @click="destroy">destroy</button>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="main.js"></script>
 

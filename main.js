@@ -1,8 +1,11 @@
+Vue.component('hello', {
+  template: '<p>使い回しコンポーネント</p>'
+});
+
 // これもできる
 var data = {
   message: 'instance A'
 }
-
 var vm1 = new Vue({
   el: '#app1',
   data: data,
@@ -36,17 +39,39 @@ new Vue({
   }
 }).$mount('#app3')
 
-// hはdocument.createElementとは違う
-// DOMを作る
-var div = document.createElement('div')
-// DOM
-console.log(document)
-console.dir(document)
-console.log(div)
 
-// 仮想DOMは全てDOMを模したjavascriptオブジェクト
-
-// DOMに直接アクセスするのはパフォーマンスが悪い
-// ブラウザのもつものにアクセスするから
-
-// 仮想DOMは、jsオブジェクトだからアクセスが早い
+new Vue({
+  el: '#app4',
+  data: {
+    name: 'kaoru'
+  },
+  beforeCreate: function() {
+    console.log('before create')
+  },
+  created: function() {
+    console.log('created!')
+  },
+  beforeMount: function() {
+    console.log('beforeMount')
+  },
+  mounted: function() {
+    console.log('Mounted')
+  },
+  beforeUpdate: function() {
+    console.log('beforeUpdate')
+  },
+  updated: function() {
+    console.log('updated')
+  },
+  beforeDestroy: function() {
+    console.log('beforeDestroy')
+  },
+  destroyed: function() {
+    console.log('destroyed')
+  },
+  methods: {
+    destroy: function(){
+      this.$destroy()
+    }
+  }
+})
