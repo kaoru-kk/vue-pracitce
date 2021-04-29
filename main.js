@@ -43,3 +43,10 @@ var div = document.createElement('div')
 console.log(document)
 console.dir(document)
 console.log(div)
+
+// 仮想DOMは全てDOMを模したjavascriptオブジェクト
+
+// DOMに直接アクセスするのはパフォーマンスが悪い
+// ブラウザのもつものにアクセスするから
+
+// 仮想DOMは、jsオブジェクトだからアクセスが早い
