@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <button @click="ok = !ok">eee</button>
+    <!-- 要素ごと消す（コメントアウトで消える） -->
+    <!-- 巨大になるかつ頻繁に変えるときはv-ifは描画のコストかかる -->
+    <p v-if="ok">OK!</p>
+    <!-- display noneで消える -->
+    <!-- templateタグに対しては使えない -->
+    <!-- elseは出来ない -->
+    <!-- 条件にかかわらずDOMに入れるので描画が遅くなる -->
+    <p v-show="ok">OK!</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
