@@ -1,15 +1,21 @@
 <template>
   <div>
-    <p>いいね！{{ fav_number }}</p>
+    <p>いいね！{{ halfNumber }}</p>
     <button @click='increment'>plus 1</button>
   </div>
 </template>
 
 <script>
 export default {
+  props: ['totalNumber'],
+  computed: {
+    halfNumber(){
+      return this.totalNumber / 2
+    }
+  },
   data() {
     return {
-      fav_number: 19
+      fav_number: 6
     };
   },
   methods: {
