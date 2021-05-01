@@ -1,29 +1,10 @@
 <template>
   <div>
-    <LikeHeader headerText="hello">
-
-      <h3>デフォルトのスロットはここだよA</h3>
-      <h3>デフォルトのスロットはここだよB</h3>
-      <!-- v-slotの引数１は適当な名前 (must template tag)-->
-      <template v-slot:title>
-          <h1>こんにちは</h1>
-      </template>
-
-      <template v-slot:like-number>
-        <h1>トータルのいいね数は</h1>
-        <p>{{ parent_number }}</p>  
-      </template>
-
-      <h3>デフォルトのスロットはここだよ１</h3>
-      <h3>デフォルトのスロットはここだよ2</h3>
-      <h3>デフォルトのスロットはここだよ３</h3>
+    <LikeHeader>
+      <h1>こんにちは</h1>
     </LikeHeader>
 
     <LikeNumber :totalNumber="parent_number" v-on:button-click="parent_number = $event"></LikeNumber>
-    <LikeNumber :totalNumber="parent_number" @button-click="parent_number = $event"></LikeNumber>
-    <!-- これでもできる -->
-    <LikeNumber :totalNumber="parent_number" @button-click="incrementParentNumber"></LikeNumber>
-    
   </div>
 </template>
 
@@ -49,10 +30,3 @@ export default {
 }
 
 </script>
-
-<style scoped>
-/* どちらにも書いたら親が優先される */
-h1 {
-  color: red;
-}
-</style>
