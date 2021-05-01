@@ -5,27 +5,33 @@
     </LikeHeader>
 
     <LikeNumber :totalNumber="parent_number" v-on:button-click="parent_number = $event"></LikeNumber>
+  
+    <!-- keep-aliveの中はキャッシュされる -->
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
+
+    <button @click="currentComponent = 'Home'">home</button>
+    <button @click="currentComponent = 'About'">about</button>
   </div>
 </template>
 
 <script>
 import LikeHeader from './components/LikeHeader.vue';
+import Home from './components/Home.vue'
+import About from './components/Abount.vue'
 
 export default {
   data(){
     return {
-      parent_number: 12
+      parent_number: 12,
+      currentComponent: 'Home',
     };
   },
   components: {
-    LikeHeader
-  },
-  methods: {
-    incrementParentNumber(value) {
-      console.log(value);
-      // ここの値変更は、子から親のデータを変えているのではなく、親が変えているという認識
-      this.parent_number  = value + 10;
-    }
+    LikeHeader,
+    Home,
+    About
   }
 }
 
