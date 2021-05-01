@@ -1,8 +1,19 @@
 <template>
   <div>
-    <slot></slot>
-    <p>{{ headerText }}</p>
-  </div>  
+    <!-- slotの中身がないときに、slotタグの中のものが読み込まれる -->
+    <!-- フォールバックコンテンツ -->
+    <slot name='title'>
+      <h1>デフォルトのタイトル</h1>
+    </slot>
+
+    <hr>
+    <!-- 名前つきslot -->
+    <slot name='like-number'>
+      <p>ロールバックテキスと</p>
+      <h1>ロールバックテキスと</h1>
+    </slot>
+
+  </div>
 </template>
 
 <script>

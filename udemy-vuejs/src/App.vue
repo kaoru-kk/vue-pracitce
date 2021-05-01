@@ -1,10 +1,15 @@
 <template>
   <div>
     <LikeHeader headerText="hello">
-      <h1>トータルのいいね数は</h1>
-      <p>{{ parent_number }}</p>
-      <!-- これはNG（子コンポーネントに定義されているdataだから） -->
-      <!-- <p>{{ headerText }}</p> -->
+      <!-- v-slotの引数１は適当な名前 (must template tag)-->
+      <template v-slot:title>
+          <h1>こんにちは</h1>
+      </template>
+
+      <template v-slot:like-number>
+        <h1>トータルのいいね数は</h1>
+        <p>{{ parent_number }}</p>  
+      </template>
     </LikeHeader>
 
     <LikeNumber :totalNumber="parent_number" v-on:button-click="parent_number = $event"></LikeNumber>
