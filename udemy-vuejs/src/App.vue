@@ -1,7 +1,12 @@
 <template>
   <div>
-    <LikeHeader></LikeHeader>
-    <p>{{ parent_number }}</p>
+    <LikeHeader headerText="hello">
+      <h1>トータルのいいね数は</h1>
+      <p>{{ parent_number }}</p>
+      <!-- これはNG（子コンポーネントに定義されているdataだから） -->
+      <!-- <p>{{ headerText }}</p> -->
+    </LikeHeader>
+
     <LikeNumber :totalNumber="parent_number" v-on:button-click="parent_number = $event"></LikeNumber>
     <LikeNumber :totalNumber="parent_number" @button-click="parent_number = $event"></LikeNumber>
     <!-- これでもできる -->
@@ -32,3 +37,10 @@ export default {
 }
 
 </script>
+
+<style scoped>
+/* どちらにも書いたら親が優先される */
+h1 {
+  color: red;
+}
+</style>
