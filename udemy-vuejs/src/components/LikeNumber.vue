@@ -26,6 +26,10 @@ export default {
       // 引数、１に値の名前、２に値
       // $emit、親コンポーネントのイベントを発火させるものというニュアンス
       this.$emit('button-click', this.totalNumber + 1);
+
+      // これはNG,子から親は書き換えられない
+      // vueのシステムは単方向のフローのみ
+      // this.totalNumber += 1
     }
   }
 }
