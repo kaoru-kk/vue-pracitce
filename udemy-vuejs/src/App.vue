@@ -3,8 +3,6 @@
     <LikeHeader></LikeHeader>
     <p>{{ parent_number }}</p>
     <LikeNumber :totalNumber="4"></LikeNumber>
-    <!-- defaultが入る -->
-    <LikeNumber></LikeNumber>
     <LikeNumber :totalNumber="parent_number"></LikeNumber>
   </div>
 </template>
