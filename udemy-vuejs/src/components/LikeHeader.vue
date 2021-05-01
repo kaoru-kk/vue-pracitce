@@ -13,6 +13,11 @@
       <h1>ロールバックテキスと</h1>
     </slot>
 
+    <!-- default slot -->
+    <!-- name='default'も同じになる -->
+    <!-- 名前付きslotを省いたものがここに入る -->
+    <slot></slot>
+
   </div>
 </template>
 

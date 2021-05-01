@@ -1,6 +1,9 @@
 <template>
   <div>
     <LikeHeader headerText="hello">
+
+      <h3>デフォルトのスロットはここだよA</h3>
+      <h3>デフォルトのスロットはここだよB</h3>
       <!-- v-slotの引数１は適当な名前 (must template tag)-->
       <template v-slot:title>
           <h1>こんにちは</h1>
@@ -10,6 +13,10 @@
         <h1>トータルのいいね数は</h1>
         <p>{{ parent_number }}</p>  
       </template>
+
+      <h3>デフォルトのスロットはここだよ１</h3>
+      <h3>デフォルトのスロットはここだよ2</h3>
+      <h3>デフォルトのスロットはここだよ３</h3>
     </LikeHeader>
 
     <LikeNumber :totalNumber="parent_number" v-on:button-click="parent_number = $event"></LikeNumber>
