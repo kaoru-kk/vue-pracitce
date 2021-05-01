@@ -23,7 +23,9 @@ export default {
   },
   methods: {
     increment(){
-      this.fav_number += 1;
+      // 引数、１に値の名前、２に値
+      // $emit、親コンポーネントのイベントを発火させるものというニュアンス
+      this.$emit('button-click', this.totalNumber + 1);
     }
   }
 }

@@ -2,8 +2,11 @@
   <div>
     <LikeHeader></LikeHeader>
     <p>{{ parent_number }}</p>
-    <LikeNumber :totalNumber="4"></LikeNumber>
-    <LikeNumber :totalNumber="parent_number"></LikeNumber>
+    <LikeNumber :totalNumber="parent_number" v-on:button-click="parent_number = $event"></LikeNumber>
+    <LikeNumber :totalNumber="parent_number" @button-click="parent_number = $event"></LikeNumber>
+    <!-- これでもできる -->
+    <LikeNumber :totalNumber="parent_number" @button-click="incrementParentNumber"></LikeNumber>
+    
   </div>
 </template>
 
@@ -18,6 +21,13 @@ export default {
   },
   components: {
     LikeHeader
+  },
+  methods: {
+    incrementParentNumber(value) {
+      console.log(value);
+      // ここの値変更は、子から親のデータを変えているのではなく、親が変えているという認識
+      this.parent_number  = value + 10;
+    }
   }
 }
 
