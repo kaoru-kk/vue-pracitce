@@ -16,16 +16,8 @@
 
     <div>
       <h2>イベントフォーム</h2>
-      <label for="title">TITLE</label>
 
-      <!-- v-model、input typetextの時は以下のことをしている -->
-      <input 
-        type="text"
-        id='title'
-        :value="eventData.title"
-        @input='eventData.title = $event.target.value'
-      >
-      <pre>{{ eventData.title }}</pre>
+      <EventTitle v-model="eventData.title"></EventTitle>
 
       <label for="capacity">最大人数</label>
       <!-- stringで代入されてしまうので.numberをつける -->
@@ -124,6 +116,7 @@
 import LikeHeader from './components/LikeHeader.vue';
 import Home from './components/Home.vue'
 import About from './components/Abount.vue'
+import EventTitle from './components/EventTitle.vue'
 
 export default {
   data(){
@@ -146,7 +139,8 @@ export default {
   components: {
     LikeHeader,
     Home,
-    About
+    About,
+    EventTitle
   }
 }
 
