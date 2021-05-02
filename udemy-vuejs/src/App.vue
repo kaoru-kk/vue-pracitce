@@ -44,6 +44,11 @@
       >
       <p>{{ typeof eventData.host }}</p>
       <pre>{{ eventData.host }}</pre>
+
+      <label for='detail'></label>
+      <textarea v-model='eventData.detail' id="detail" cols="30" rows="10"></textarea>
+      <pre>{{ eventData.detail }}</pre>
+      <p>{{ eventData.detail }}</p>
     </div>
   </div>
 </template>
@@ -61,7 +66,8 @@ export default {
       eventData: {
         title: "タイトル",
         capacity: 4,
-        host: 'kaoru'
+        host: 'kaoru',
+        detail: 'aaaa'
       }
     };
   },
