@@ -103,6 +103,17 @@
         v-model="eventData.price"
       >
       <p>{{ eventData.price }}</p>
+
+      <hr>
+      <p>開催場所</p>
+      <!-- multipleもつけれる -->
+      <select v-model="eventData.location">
+        <option 
+          v-for='location in eventData.locations'
+          :key="location"
+        >{{ location }}</option>
+      </select>
+      <p>{{ eventData.location }}</p>
     </div>
   </div>
 </template>
@@ -124,7 +135,9 @@ export default {
         detail: 'aaaa',
         isPrivate: false,
         target: [],
-        price: '無料'
+        price: '無料',
+        locations: ['tokyo', 'osaka', 'nagoya'],
+        location: 'tokyo'
       }
     };
   },
