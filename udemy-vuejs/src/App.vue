@@ -57,6 +57,33 @@
         v-model="eventData.isPrivate"
       >
       <p>{{ eventData.isPrivate }}</p>
+
+      <p>参加条件</p>
+      <label for="10">10代</label>
+      <input 
+        type="checkbox"
+        id="10"
+        value='10代'
+        v-model="eventData.target"
+      >
+
+      <label for="20">20代</label>
+      <input 
+        type="checkbox"
+        id="20"
+        value='20代'
+        v-model="eventData.target"
+      >
+
+      <label for="30">30代</label>
+      <input 
+        type="checkbox"
+        id="30"
+        value='30代'
+        v-model="eventData.target"
+      >
+
+      <p>{{ eventData.target }}</p>
     </div>
   </div>
 </template>
@@ -76,7 +103,8 @@ export default {
         capacity: 4,
         host: 'kaoru',
         detail: 'aaaa',
-        isPrivate: false
+        isPrivate: false,
+        target: []
       }
     };
   },
