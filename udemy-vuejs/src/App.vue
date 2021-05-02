@@ -23,7 +23,27 @@
         id='title'
         v-model.lazy="eventData.title"
       >
-      <p>{{ eventData.title }}</p>
+      <pre>{{ eventData.title }}</pre>
+
+      <label for="capacity">最大人数</label>
+      <!-- stringで代入されてしまうので.numberをつける -->
+      <input 
+        type="number"
+        id='capacity'
+        v-model.number="eventData.capacity"
+      >
+      <p>{{ typeof eventData.capacity }}</p>
+      <p>{{ eventData.capacity }}</p>
+
+      <label for="host">主催者</label>
+      <!-- trimは先頭、末尾の空白をきる -->
+      <input 
+        type="text"
+        id='host'
+        v-model.trim="eventData.host"
+      >
+      <p>{{ typeof eventData.host }}</p>
+      <pre>{{ eventData.host }}</pre>
     </div>
   </div>
 </template>
@@ -39,7 +59,9 @@ export default {
       parent_number: 12,
       currentComponent: 'Home',
       eventData: {
-        title: "タイトル"
+        title: "タイトル",
+        capacity: 4,
+        host: 'kaoru'
       }
     };
   },
