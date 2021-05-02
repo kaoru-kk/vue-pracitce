@@ -17,11 +17,13 @@
     <div>
       <h2>イベントフォーム</h2>
       <label for="title">TITLE</label>
-      <!-- lazyはchangeで発火する -->
+
+      <!-- v-model、input typetextの時は以下のことをしている -->
       <input 
         type="text"
         id='title'
-        v-model.lazy="eventData.title"
+        :value="eventData.title"
+        @input='eventData.title = $event.target.value'
       >
       <pre>{{ eventData.title }}</pre>
 
