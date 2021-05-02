@@ -49,6 +49,14 @@
       <textarea v-model='eventData.detail' id="detail" cols="30" rows="10"></textarea>
       <pre>{{ eventData.detail }}</pre>
       <p>{{ eventData.detail }}</p>
+
+      <label for="isPrivate">非公開</label>
+      <input 
+        type="checkbox"
+        id="isPrivate"
+        v-model="eventData.isPrivate"
+      >
+      <p>{{ eventData.isPrivate }}</p>
     </div>
   </div>
 </template>
@@ -67,7 +75,8 @@ export default {
         title: "タイトル",
         capacity: 4,
         host: 'kaoru',
-        detail: 'aaaa'
+        detail: 'aaaa',
+        isPrivate: false
       }
     };
   },
