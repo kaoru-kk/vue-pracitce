@@ -13,6 +13,17 @@
 
     <button @click="currentComponent = 'Home'">home</button>
     <button @click="currentComponent = 'About'">about</button>
+
+    <div>
+      <h2>イベントフォーム</h2>
+      <label for="title">TITLE</label>
+      <input 
+        type="text"
+        id='title'
+        v-model="eventData.title"
+      >
+      <p>{{ eventData.title }}</p>
+    </div>
   </div>
 </template>
 
@@ -26,6 +37,9 @@ export default {
     return {
       parent_number: 12,
       currentComponent: 'Home',
+      eventData: {
+        title: "タイトル"
+      }
     };
   },
   components: {
